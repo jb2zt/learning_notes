@@ -11,3 +11,7 @@ Yes, in the bytecode: If you pass in the value as a constructor parameter, then 
 - the contribute() function doesn't take contribution amount as a param, instead it takes msg.value, so I need to 'fund' msg.value somehow?
 - I don't get wy I'm not already the owner of the contract if in the constructor owner = msg.sender
     -- Similarly, why would the state variable contributions[] be giving me a different value than getContributions()
+- I can't just start by funding the contract via the fallback function because it requires contributions[msg.sender] > 0. Need to make a contribution first, but how to fund that?
+    -- So the contribute function is 'public payable' which means I can use simple payment object { to: , from: , value: } as a param when I call it: https://docs.alchemy.com/docs/solidity-payable-functions
+- Then I just used the withdraw() function, which passed the level but why isn't there anything in the ether amount over here?: https://goerli.etherscan.io/tx/0xac90827be857d9c09a99ce067aaa7fed95a0c639297b4d594cf9a6d515f55a90
+    
