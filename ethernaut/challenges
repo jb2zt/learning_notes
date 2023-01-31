@@ -2,4 +2,9 @@
 - The password initialized with 'string public password' and then thrown in the constructor. Does that mean the plaintext version was created when I made a new instance when it was deployed, or when the contract itself was deployed, or what? 
 It looks like it happens when the contract is created: https://solidity-by-example.org/constructor/
 - Where is it encrypted then? In the bytecode for the contract itself or something?
-Yes, in the bytecode: If you pass in the value as a constructor parameter, then the value can be seen in the contract creation transaction. Constructor arguments are just appended to the deployment bytecode. With the contract's ABI (not even the source code) it is fairly easy to decode this and find the values.
+Yes, in the bytecode: If you pass in the value as a constructor parameter, then the value can be seen in the contract creation transaction. Constructor arguments are just appended to the deployment bytecode. With the contract's ABI (not even the source code) it is possible to decode this and find the values.
+
+2. Fallback
+Mapping(key => value) looks like it's just a hash/js object? Any differences?
+msg.sender is the eoa/contract that's connecting with the contract
+modifiers change how a function works, for example to add a logic prerequisite
