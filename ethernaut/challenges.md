@@ -14,4 +14,7 @@ Yes, in the bytecode: If you pass in the value as a constructor parameter, then 
 - I can't just start by funding the contract via the fallback function because it requires contributions[msg.sender] > 0. Need to make a contribution first, but how to fund that?
     -- So the contribute function is 'public payable' which means I can use simple payment object { to: , from: , value: } as a param when I call it: https://docs.alchemy.com/docs/solidity-payable-functions
 - Then I just used the withdraw() function, which passed the level but why isn't there anything in the ether amount over here?: https://goerli.etherscan.io/tx/0xac90827be857d9c09a99ce067aaa7fed95a0c639297b4d594cf9a6d515f55a90
-    
+
+## Fallout
+
+- It looks like the Fal1out() function is the only thing here that reassigns owner, so just send to that? IDK what the allocator() function is for in that case though
