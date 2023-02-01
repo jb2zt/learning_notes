@@ -18,3 +18,4 @@ Yes, in the bytecode: If you pass in the value as a constructor parameter, then 
 ## Fallout
 
 - It looks like the Fal1out() function is the only thing here that reassigns owner, so just send to that? IDK what the allocator() function is for in that case though
+    -- I think the extra stuff is just to distract you. In this case you just grab ownership but funding the Fal1out() function
