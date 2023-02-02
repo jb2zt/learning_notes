@@ -19,3 +19,9 @@ Yes, in the bytecode: If you pass in the value as a constructor parameter, then 
 
 - It looks like the Fal1out() function is the only thing here that reassigns owner, so just send to that? IDK what the allocator() function is for in that case though
     -- I think the extra stuff is just to distract you. In this case you just grab ownership but funding the Fal1out() function
+
+## Coinflip
+
+- First glance seems obvious enough that I can just calculate blockValue in advance, just need to figure out how the solidity keywords work
+- revert() is basically like require; it also returns any unused gas and aborts state changes. It sounds like generally you want to use require unless the logic is a bit more complex, in which case if you really can't simplify it you can use revert.
+- While the actual vulnerability is trivial here, the help section says I might need to deploy an attack contract for this level. So why would that be?
