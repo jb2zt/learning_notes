@@ -28,3 +28,7 @@ Yes, in the bytecode: If you pass in the value as a constructor parameter, then 
     -- Seems like this has to do with block timings and stuff, since you need to execute on the current block hash
 - Followed [this guide](https://www.youtube.com/watch?v=VJZuLb1r1nQ&t=983s) because I didn't really understand how to deploy/interact with the level contract with my own contract
 - The attack contract is pretty trivial; just duplicate the original contract
+- In Remix, change the settings so that Environment is 'injected provider' (set to metamask)
+    -- Deploy CoinFlipAttack to the contract address of your ethernaut level instance
+    -- Remix now lists the callable functions from that contract, and when you hit flip() it will use your attack contract to flip (I need to draw this out because I don't totally understand the mechanics
+    -- Verify that consectutive correct guesses is incrementing on the ethernaut instance
