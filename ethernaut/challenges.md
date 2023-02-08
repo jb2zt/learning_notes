@@ -32,3 +32,7 @@ Yes, in the bytecode: If you pass in the value as a constructor parameter, then 
     -- Deploy CoinFlipAttack to the contract address of your ethernaut level instance
     -- Remix now lists the callable functions from that contract, and when you hit flip() it will use your attack contract to flip (I need to draw this out because I don't totally understand the mechanics
     -- Verify that consectutive correct guesses is incrementing on the ethernaut instance
+    
+## Telephone
+- I'm finding it hard to get a good mental picture of the interaction between the contract instance and a contract deployed at that address. I guess it's just that the attack contract imports the contract itself
+- I tried just deploying a copy of telephone.sol and calling it with my player address, but that didn't work. I should check if it's getting caught in the conditional or something else is going on.
