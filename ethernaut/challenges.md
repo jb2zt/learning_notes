@@ -42,4 +42,5 @@ Yes, in the bytecode: If you pass in the value as a constructor parameter, then 
   - Relevant here because msg.sender only comes from EOA, which is not the case for tx.origin
   - DON'T USE tx.origin as any sort of authentication. You can phish the victim by getting calling the public contract and getting them to sign off.
 - So far it seems like I need to delpoy an attack contract and then have the ethernaut level instance accept the proposed contract and run the attack function. Not sure of the mechanics on that.
-  - In the contrived example of this challenge, you just call attack function with the param of your address, however in a phishing attack you would trick them into calling the function via metamask or whatever. This is still a little confusing to me
+  - In the contrived example of this challenge, you just call attack function with the param of your address, however in a phishing attack you would trick them into calling the function via metamask or whatever.
+    - tx.origin is the EOA of the deployed attack contract
