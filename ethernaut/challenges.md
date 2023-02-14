@@ -44,3 +44,13 @@ Yes, in the bytecode: If you pass in the value as a constructor parameter, then 
 - So far it seems like I need to delpoy an attack contract and then have the ethernaut level instance accept the proposed contract and run the attack function. Not sure of the mechanics on that.
   - In the contrived example of this challenge, you just call attack function with the param of your address, however in a phishing attack you would trick them into calling the function via metamask or whatever.
     - tx.origin is the EOA of the deployed attack contract
+
+## Token
+- The hint text mentions an odometer, which I think is a reference to number type overflow. The contract uses uint instead of uint256, but the solidity docs say those are aliases for uint256
+- Maybe I just overflow the uint in transfer() params? 
+  - In the require statement there's some uint math where a user balance value (uint) is subtracted by value (another uint)
+  - uint max: "115792089237316195423570985008687907853269984665640564039457584007913129639935"
+- Maybe something simpler like sending a negative value in transfer()? I don't see any checking about that
+
+
+
