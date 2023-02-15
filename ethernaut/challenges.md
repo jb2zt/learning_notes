@@ -51,6 +51,7 @@ Yes, in the bytecode: If you pass in the value as a constructor parameter, then 
   - In the require statement there's some uint math where a user balance value (uint) is subtracted by value (another uint)
   - uint max: "115792089237316195423570985008687907853269984665640564039457584007913129639935"
 - Maybe something simpler like sending a negative value in transfer()? I don't see any checking about that
+  - It looks like, by definition, uint is a positive number. it certainly doesn't work in the test contract I set up in remix
 
 
 
