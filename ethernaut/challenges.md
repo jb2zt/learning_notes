@@ -53,11 +53,8 @@ Yes, in the bytecode: If you pass in the value as a constructor parameter, then 
 - Maybe something simpler like sending a negative value in transfer()? I don't see any checking about that
   - It looks like, by definition, uint is a positive number. it certainly doesn't work in the test contract I set up in remix
 - I wrote this test contract that has strange behavior but may relate to triggering the overflow in the ethernaut contract
-  // SPDX-License-Identifier: MIT
-  pragma solidity ^0.6.0;
-
-  contract Overflow {
-
+    
+      contract Overflow {
       uint public balance;
 
         constructor() public {
@@ -74,6 +71,7 @@ Yes, in the bytecode: If you pass in the value as a constructor parameter, then 
       function getBalance() public view returns(uint){
           return balance;
       }
-  }
-
+      }
+- If I send it a max size uint (or near that), it decrements balance by 1 each time (???)
+- If I send it a smaller but still very large uint, (ex: 115792089237316195423570985008687907853269984665640564039457584007913129), it gives be a very large balance
 
