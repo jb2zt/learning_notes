@@ -52,6 +52,28 @@ Yes, in the bytecode: If you pass in the value as a constructor parameter, then 
   - uint max: "115792089237316195423570985008687907853269984665640564039457584007913129639935"
 - Maybe something simpler like sending a negative value in transfer()? I don't see any checking about that
   - It looks like, by definition, uint is a positive number. it certainly doesn't work in the test contract I set up in remix
+- I wrote this test contract that has strange behavior but may relate to triggering the overflow in the ethernaut contract
+  // SPDX-License-Identifier: MIT
+  pragma solidity ^0.6.0;
 
+  contract Overflow {
+
+      uint public balance;
+
+        constructor() public {
+            balance = 20;
+          }
+
+
+      function explodeNum(uint number) public returns(bool){
+          require(balance - number >= 0);
+          balance += number;
+          return true;
+      }
+
+      function getBalance() public view returns(uint){
+          return balance;
+      }
+  }
 
 
