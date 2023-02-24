@@ -18,7 +18,7 @@ Yes, in the bytecode: If you pass in the value as a constructor parameter, then 
 ## Fallout
 
 - It looks like the Fal1out() function is the only thing here that reassigns owner, so just send to that? IDK what the allocator() function is for in that case though
-  - I think the extra stuff is just to distract you. In this case you just grab ownership but funding the Fal1out() function
+  - I think the extra stuff is just to distract you. In this case you just grab ownership by funding the Fal1out() function
 
 ## Coinflip
 
@@ -74,4 +74,5 @@ Yes, in the bytecode: If you pass in the value as a constructor parameter, then 
       }
 - If I send it a max size uint (or near that), it decrements balance by 1 each time (???)
 - If I send it a smaller but still very large uint, (ex: 115792089237316195423570985008687907853269984665640564039457584007913129), it gives be a very large balance
-
+- Tried to do something similar in the ethernaut contract but as far as I can tell that would cost crazy gas: more than I have in Goerli Eth
+- 
