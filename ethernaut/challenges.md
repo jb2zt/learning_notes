@@ -75,4 +75,5 @@ Yes, in the bytecode: If you pass in the value as a constructor parameter, then 
 - If I send it a max size uint (or near that), it decrements balance by 1 each time (???)
 - If I send it a smaller but still very large uint, (ex: 115792089237316195423570985008687907853269984665640564039457584007913129), it gives be a very large balance
 - Tried to do something similar in the ethernaut contract but as far as I can tell that would cost crazy gas: more than I have in Goerli Eth
-- 
+- Copied the contract into Remix and tried it in the VM there, seemed to work
+- But any amount I attempt to send in the function is way more Goerli eth than I have
