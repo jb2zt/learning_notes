@@ -77,3 +77,9 @@ Yes, in the bytecode: If you pass in the value as a constructor parameter, then 
 - Tried to do something similar in the ethernaut contract but as far as I can tell that would cost crazy gas: more than I have in Goerli Eth
 - Copied the contract into Remix and tried it in the VM there, seemed to work
 - But any amount I attempt to send in the function is way more Goerli eth than I have
+- Honestly I don't care much about this one because it seems like unit overflow is handled better in more recent versions of solidity
+
+## Delegation
+- Call an initial, already deployed contract A, using new state, with contract B
+  - Basically you are dynamically running code from another contract at runtime
+- This contract has a non-payable fallback function
